@@ -122,34 +122,34 @@ export default class Block extends Component {
 
     const blockStyles = [
       styles.block,
-      // flex && { flex },
-      // flex === false && { flex: 0 }, // reset / disable flex
-      // row && styles.row,
-      // column && styles.column,
-      // center && styles.center,
-      // middle && styles.middle,
-      // left && styles.left,
-      // right && styles.right,
-      // top && styles.top,
-      // bottom && styles.bottom,
-      // margin && { ...this.handleMargins() },
-      // padding && { ...this.handlePaddings() },
-      // card && styles.card,
-      // shadow && styles.shadow,
-      // space && { justifyContent: `space-${space}` },
-      // wrap && { flexWrap: 'wrap' },
-      // color && styles[color], // predefined styles colors for backgroundColor
-      // color && !styles[color] && { backgroundColor: color }, // custom backgroundColor
-      // style, // rewrite predefined styles
+      flex && { flex },
+      flex === false && { flex: 0 }, // reset / disable flex
+      row && styles.row,
+      column && styles.column,
+      center && styles.center,
+      middle && styles.middle,
+      left && styles.left,
+      right && styles.right,
+      top && styles.top,
+      bottom && styles.bottom,
+      margin && { ...this.handleMargins() },
+      padding && { ...this.handlePaddings() },
+      card && styles.card,
+      shadow && styles.shadow,
+      space && { justifyContent: `space-${space}` },
+      wrap && { flexWrap: 'wrap' },
+      color && styles[color], // predefined styles colors for backgroundColor
+      color && !styles[color] && { backgroundColor: color }, // custom backgroundColor
+      style, // rewrite predefined styles
     ];
 
-    // if (animated) {
-    //   return (
-    //     <Animated.View style={blockStyles} {...props}>
-    //       {children}
-    //     </Animated.View>
-    //   )
-    // }
+    if (animated) {
+      return (
+        <Animated.View style={blockStyles} {...props}>
+          {children}
+        </Animated.View>
+      )
+    }
 
     return (
       <View style={blockStyles} {...props}>
